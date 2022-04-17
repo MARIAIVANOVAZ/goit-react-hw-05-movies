@@ -1,0 +1,26 @@
+.description{
+    display:block;
+    font-weight: 400;
+}
+.title{
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.position{
+    display: flex;
+    padding: 20px;
+}
+.image{
+width: 500px;
+height: 100%;
+
+}
+.about{
+    margin-left: 30px;
+}
+.additional{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}

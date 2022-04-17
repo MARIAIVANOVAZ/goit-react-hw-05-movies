@@ -1,0 +1,27 @@
+
+.link {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    color: #000;
+    text-decoration: none;
+}
+
+.active {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    color: rgb(54, 94, 224);
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    text-transform: uppercase;
+    /* justify-content: center; */
+   
+
+}
