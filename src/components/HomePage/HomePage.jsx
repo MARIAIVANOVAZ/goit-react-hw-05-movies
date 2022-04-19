@@ -19,7 +19,7 @@ export default function HomePage() {
         .then(films => setFilms([...films.results]));
     };
     fetchMovies();
-  });
+  }, []);
   // fetchMovies();
 
   return (

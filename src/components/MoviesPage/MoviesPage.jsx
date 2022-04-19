@@ -9,11 +9,11 @@ export default function MoviesPage() {
   const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  //   const handleInputChange = e => {
-  //     // setInput(e.target.value);
-  //     setInput(e.currentTarget.value);
-  //   };
   useEffect(() => {
+    if (query === '') {
+      alert('Enter your search query!');
+      return;
+    }
     if (!query) {
       return;
     }
@@ -31,27 +31,18 @@ export default function MoviesPage() {
           setLoading(false);
         });
     };
+
     fetch();
   }, [query]);
 
-  //   const fetch = () => {
-  //     setLoading(true);
-
-  //     fetchSearchMovie(input)
-  //       .then(response => response.json())
-  //       .then(films => setFilms([...films.results]))
-  //       //   .catch(error => setError(error))
-  //       .finally(() => {
-  //         setLoading(false);
-  //         setInput('');
-  //       });
-  //   };
-
   const handleSubmit = e => {
     e.preventDefault();
-    setSearchParams({ query: e.currentTarget.elements.query.value });
+
+    setSearchParams({
+      query: e.currentTarget.elements.query.value.trim(),
+    });
+
     console.log(e.currentTarget.elements.query.value);
-    // fetch();
   };
 
   return (
