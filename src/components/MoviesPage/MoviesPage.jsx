@@ -10,10 +10,6 @@ export default function MoviesPage() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (query === '') {
-      alert('Enter your search query!');
-      return;
-    }
     if (!query) {
       return;
     }
@@ -37,10 +33,16 @@ export default function MoviesPage() {
 
   const handleSubmit = e => {
     e.preventDefault();
-
+    const searchQuery = e.currentTarget.elements.query.value.trim();
+    if (!searchQuery) {
+      alert('Enter your search query!');
+      setSearchParams('');
+      return;
+    }
     setSearchParams({
-      query: e.currentTarget.elements.query.value.trim(),
+      query: searchQuery,
     });
+    e.currentTarget.reset();
 
     console.log(e.currentTarget.elements.query.value);
   };
